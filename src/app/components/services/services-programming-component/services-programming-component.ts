@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-@Component({
-  selector: 'app-services-programming-component',
-  imports: [],
-  templateUrl: './services-programming-component.html',
-  styleUrl: './services-programming-component.scss',
-})
-export class ServicesProgrammingComponent {
+@Injectable({ providedIn: 'root' })
+export class ServicesProgrammingService {
+  private http = inject(HttpClient);
 
+  getUsers(): Observable<any> {
+    return this.http.get('https://jsonplaceholder.typicode.com/users');
+  }
 }

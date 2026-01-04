@@ -1,1 +1,25 @@
 <p>basic-programming-component works!</p>
+<!-- <div>
+    <ul>
+        <li *ngFor="let user of userData">
+            <div>{{ user.name }}</div>
+            <div>{{ user.email }}</div>
+        </li>
+    </ul>
+</div> -->
+<p>Total Users : {{ userData.length }}</p>
+<ul>
+    @for(user of userData; track user.id) {
+    <li style="margin-bottom: 10px; list-style: none; border-left: 4px solid blue; padding-left: 10px;">
+        <strong>Name : {{ user.name }}</strong> <br>
+        <small>Email : {{ user.email }}</small><br>
+        <small>Company Name : {{ user.company.name }}</small><br>
+        <button (click)="deleteUserData(user.id)"
+            style="margin-top: 10px; background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
+            Remove User
+        </button>
+    </li>
+    } @empty {
+    <p>"Loading users" </p>
+    }
+</ul>
