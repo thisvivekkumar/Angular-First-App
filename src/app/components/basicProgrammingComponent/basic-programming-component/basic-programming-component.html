@@ -9,37 +9,38 @@
 </div> -->
 <p>Total Users : {{ userData.length }}</p>
 @if (isLoading) {
-  <div style="color: blue; font-weight: bold; margin-bottom: 20px;">
-    ⏳ Loading users from the server...
-  </div>
+<div style="color: blue; font-weight: bold; margin-bottom: 20px;">
+  ⏳ Loading users from the server...
+</div>
 }
 
 @if (errorMessage) {
-  <div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;">
-    ⚠️ {{ errorMessage }}
-  </div>
+<div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;">
+  ⚠️ {{ errorMessage }}
+</div>
 }
 
 @if (!isLoading && !errorMessage) {
-  
+
 <p>
-<input type="text" placeholder="user name..." [(ngModel)]="newUserName" style="margin-bottom: 20px; padding: 5px; width: 200px;">
-<button style="margin-left: 10px; padding: 5px 10px; cursor: pointer;" (click)="addNewUser()">Add User</button>
-<br>Preview: <i>Currently typing: {{ newUserName }}</i>
+  <input type="text" placeholder="user name..." [(ngModel)]="newUserName"
+    style="margin-bottom: 20px; padding: 5px; width: 200px;">
+  <button style="margin-left: 10px; padding: 5px 10px; cursor: pointer;" (click)="addNewUser()">Add User</button>
+  <br>Preview: <i>Currently typing: {{ newUserName }}</i>
 
 <ul>
-    @for(user of userData; track user.id) {
-    <li style="margin-bottom: 10px; list-style: none; border-left: 4px solid blue; padding-left: 10px;">
-        <strong>Name : {{ user.name }}</strong> <br>
-        <small>Email : {{ user.email }}</small><br>
-        <small>Company Name : {{ user.company.name }}</small><br>
-        <button (click)="deleteUserData(user.id)"
-            style="margin-top: 10px; background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
-            Remove User
-        </button>
-    </li>
-    } @empty {
-    <p>"Loading users" </p>
-    }
+  @for(user of userData; track user.id) {
+  <li style="margin-bottom: 10px; list-style: none; border-left: 4px solid blue; padding-left: 10px;">
+    <strong>Name : {{ user.name }}</strong> <br>
+    <small>Email : {{ user.email }}</small><br>
+    <small>Company Name : {{ user.company.name }}</small><br>
+    <button (click)="deleteUserData(user.id)"
+      style="margin-top: 10px; background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
+      Remove User
+    </button>
+  </li>
+  } @empty {
+  <p>"Loading users" </p>
+  }
 </ul>
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ServicesProgrammingService } from '../../services/services-programming-component/services-programming-component';
+import { ServicesProgrammingService } from '../../../services/basicService/services-programming-component';
 import { FormsModule } from '@angular/forms';
-import { getRandomValues } from 'crypto';
 
 @Component({
   selector: 'app-basic-programming-component',
@@ -21,11 +20,12 @@ export class BasicProgrammingComponent implements OnInit {
   constructor(private service: ServicesProgrammingService) {
   }
 
-  ngOnInit(): void {
-    this.isLoading = true; // 1. Start loading
-    this.errorMessage = null; // 2. Reset errors
-    this.getUsersData();
-  }
+  ngOnInit() {
+  this.isLoading = true; // 1. Start loading
+  this.errorMessage = null; // 2. Reset errors
+
+  this.getUsersData();
+}
 
   addNewUser() {
     if (this.newUserName.trim()) {
