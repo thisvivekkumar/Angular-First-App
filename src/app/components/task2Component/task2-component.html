@@ -1,0 +1,38 @@
+<!-- <div>
+	<p><strong>task2-component works!</strong></p>
+	<p><strong>Task #2: The Window (Displaying Data in the UI).</strong></p>
+	<p>Right now, the data is just sitting in the computer's memory.<br>
+	We need to map it to the HTML so a user can actually see it. We will use the modern Angular @ for loop to do this.</p>
+	<p><strong>Step 1:</strong> Create a Variable to hold the data<br>
+	Go to your app.component.ts. We need to take the data from the Service and save it into a local variable.</p>
+	<p><strong>Step 2:</strong> The HTML Loop<br>
+	Now, go to app.component.html.<br>
+	We will use the new Angular Control Flow (@ for) to create a list item for every user in our array.</p>
+	<p><strong>Why we do it this way:</strong></p>
+	<ul>
+		<li><strong>track user.id:</strong> This is a performance boost. It tells Angular, "If the list changes, only re-render the specific person who changed, not the whole list."</li>
+		<li><strong>empty:</strong> This is a nice "fallback." If the API returns nothing, the user won't just see a blank screen.</li>
+		<li><strong>Interpolation curly bracess <code></code>:</strong> You are now using "One-Way Data Binding" to push TypeScript data into your HTML.</li>
+	</ul>
+	<p><strong>Your Homework (Task 2):</strong></p>
+	<ul>
+		<li>Update your app.component.ts to save the data to a variable.</li>
+		<li>Update your app.component.html using the @ for loop.</li>
+		<li><strong>Challenge:</strong> Try to display the user's Company Name as well.</li>
+	</ul>
+	<p><em>(Hint: look at the console log from Task 1 to see how the object is structured—it's usually user.company.name).</em></p>
+</div> -->
+<div>
+  <ul>
+  @for(user of users; track user.id) {
+  <li style="margin-bottom: 10px; list-style: none; border-left: 4px solid blue; padding-left: 10px;">
+    <strong>Name : {{ user.name }}</strong> <br>
+    <small>Email : {{ user.email }}</small><br>
+    <small>Company Name : {{ user.company.name }}</small><br>
+  </li>
+  } @empty {
+  <p>"Loading users" </p>
+  }
+</ul>
+
+</div>
