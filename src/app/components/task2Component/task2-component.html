@@ -29,6 +29,7 @@
     <strong>Name : {{ user.name }}</strong> <br>
     <small>Email : {{ user.email }}</small><br>
     <small>Company Name : {{ user.company.name }}</small><br>
+	<button (click)="removeUser(user.id)">Remove</button>
   </li>
   } @empty {
   <p>"Loading users" </p>

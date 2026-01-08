@@ -1,4 +1,16 @@
+@if(isError){
+<div><p>"API threw an error and response was not received"</p></div>
+}
+
+@if(isLoading){
+<div><p>Loading...</p></div>
+}
+
+@if(!isError && !isLoading){
 <div>
+  <p>
+    <input type="text" placeholder="Search..." [(ngModel)]="seachData" (input)="showFilterData()"/>
+  </p>
 	<input type="text" placeholder="Enter Name" [(ngModel)]="newUserName" />
 	<button (click)="addUser()">Add User</button>
   <ul>
@@ -15,3 +27,4 @@
 </ul>
 
 </div>
+}

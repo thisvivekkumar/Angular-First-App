@@ -21,4 +21,8 @@ export class Task2Component implements OnInit {
       console.log(this.users);
     });
   }
+
+  removeUser(id: number) {
+    this.users = this.users.filter(user => user.id !== id);
+  }
 }
