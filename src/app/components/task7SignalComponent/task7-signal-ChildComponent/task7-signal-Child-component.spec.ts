@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Task6ChildComponent } from './task6-child-component';
+import { Task6ChildComponent } from './task7-signal-Child-component';
 
 describe('Task5ChildComponent', () => {
   let component: Task6ChildComponent;

@@ -1,14 +1,15 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { Task5ChildComponent } from "../task6-search-ChildComponent/task6-child-component";
+import { Task6ChildComponent } from "../task6-search-ChildComponent/task6-child-component";
 import { Task6Service } from '../../../services/task6Service/task6-service';
 
 @Component({
   selector: 'app-task6-parent-component',
-  imports: [Task5ChildComponent],
+  standalone:true,
+  imports: [Task6ChildComponent],
   templateUrl: './task6-parent-component.html',
   styleUrl: './task6-parent-component.scss',
 })
-export class Task5ParentComponent {
+export class Task6ParentComponent {
 users: any[] = [];
   isLoading:boolean=false;
   isError:boolean=false;

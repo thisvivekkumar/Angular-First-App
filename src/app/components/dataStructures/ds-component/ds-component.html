@@ -1,0 +1,18 @@
+<div>
+<p>Data structure problems</p>
+<p>{{example1}}</p>
+<input type="text" placeholder="enter number..." [(ngModel)]="inputNumber" (input)="onInputNumber()"/>
+@if (isNumberPalindrome) {
+    <p>Ans: {{inputNumber}} is a palindrome number</p>
+} @else {
+    <p>Ans: {{inputNumber}} is not a palindrome number</p>  
+}
+
+<p>{{example2}}</p>
+<input type="text" placeholder="enter string..." [(ngModel)]="inputText" (input)="onInputText()"/>
+@if (isTextPalindrome) {
+    <p>Ans: {{inputText}} is a palindrome text</p>
+} @else {
+    <p>Ans: {{inputText}} is not a palindrome text</p>  
+}
+</div>

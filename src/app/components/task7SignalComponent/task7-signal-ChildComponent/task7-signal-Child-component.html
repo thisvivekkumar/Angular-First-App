@@ -1,0 +1,30 @@
+@if(isError){
+<div><p>"API threw an error and response was not received"</p></div>
+}
+
+@if(isLoading){
+<div><p>Loading...</p></div>
+}
+
+@if(!isError && !isLoading){
+<div>
+  <p>
+    <input type="text" placeholder="Search..." [(ngModel)]="seachData" (input)="showFilterData()"/>
+  </p>
+	<input type="text" placeholder="Enter Name" [(ngModel)]="newUserName" />
+	<button (click)="addUser()">Add User</button>
+  <ul>
+  @for(user of users(); track user.id) {
+  <li style="margin-bottom: 10px; list-style: none; border-left: 4px solid blue; padding-left: 10px;">
+    <strong>Name : {{ user.name }}</strong> <br>
+    <small>Email : {{ user.email }}</small><br>
+    <small>Company Name : {{ user.company.name }}</small><br>
+	<button (click)="removeUser(user.id)">Remove</button>
+  </li>
+  } @empty {
+  <p>"Loading users" </p>
+  }
+</ul>
+
+</div>
+}

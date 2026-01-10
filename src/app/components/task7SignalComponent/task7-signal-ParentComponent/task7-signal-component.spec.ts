@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Task6ChildComponent } from './task6-child-component';
+import { Task7ParentComponent } from './task7-signal-component';
 
-describe('Task5ChildComponent', () => {
-  let component: Task6ChildComponent;
-  let fixture: ComponentFixture<Task6ChildComponent>;
-
+describe('Task7ParentComponent', () => {
+  let component: Task7ParentComponent;
+  let fixture: ComponentFixture<Task7ParentComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Task6ChildComponent]
+      imports: [Task7ParentComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Task6ChildComponent);
+    fixture = TestBed.createComponent(Task7ParentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
