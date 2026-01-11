@@ -19,7 +19,8 @@
     <strong>Name : {{ user.name }}</strong> <br>
     <small>Email : {{ user.email }}</small><br>
     <small>Company Name : {{ user.company.name }}</small><br>
-	<button (click)="removeUser(user.id)">Remove</button>
+  <button (click)="removeUser(user.id)">Remove</button>
+  <button [routerLink]="['/user', user.id]">View Profile</button>
   </li>
   } @empty {
   <p>"Loading users" </p>

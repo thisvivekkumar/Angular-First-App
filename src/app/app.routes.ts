@@ -8,6 +8,7 @@ import { Task5ParentComponent } from './components/task5Components/task5ParentCo
 import { Task6ParentComponent } from './components/task6SearchusingRxJSComponent/task6-search-ParentComponent/task6-parent-component';
 import { Task7ParentComponent } from './components/task7SignalComponent/task7-signal-ParentComponent/task7-signal-component';
 import { DsComponent } from './components/dataStructures/ds-component/ds-component';
+import { UserProfileComponent } from './components/task6SearchusingRxJSComponent/user-profile-component/user-profile-component';
 
 export const routes: Routes = [
 	{ path: '', component: BasicProgrammingComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
 	{ path: 'task5', component: Task5ParentComponent },
 	{ path: 'task6', component: Task6ParentComponent },
 	{ path: 'task7', component: Task7ParentComponent },
-	{ path: 'ds', component: DsComponent }
+	{ path: 'ds', component: DsComponent },
+	{ path: 'user/:id', component: UserProfileComponent }
 ];

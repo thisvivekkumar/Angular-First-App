@@ -15,8 +15,10 @@ export class DsComponent {
   example2 = 'Q.2: Check if a string is palindrome';
   inputNumber: number = 0;
   inputText: string = '';
+  inputNumberToConvert: number = 0;
   isNumberPalindrome: boolean = false;
   isTextPalindrome: boolean = false;
+  resultRomanNumeral: string = '';
 
   onInputText(): boolean {
     const cleaned = this.inputText.toString();
@@ -31,6 +33,7 @@ export class DsComponent {
     let originnumber: number = Number(this.inputNumber);
     let reversex: number = 0;
     let lastdigit: number = 0;
+
     if (givenNumber < 0) {
       this.isNumberPalindrome = false;
       return this.isNumberPalindrome;
@@ -47,5 +50,22 @@ export class DsComponent {
       return this.isNumberPalindrome;
     }
     return this.isNumberPalindrome;
+  }
+
+  onInputNumberToConvert(): string {
+    const val = [
+      1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1,
+    ];
+    const syms = [
+      'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I',
+    ];
+    //let romanNumeral = '';
+    for (let i = 0; i < val.length; i++) {
+      while (this.inputNumberToConvert >= val[i]) {
+        this.resultRomanNumeral += syms[i];
+        this.inputNumberToConvert -= val[i];
+      }
+    }
+    return this.resultRomanNumeral;
   }
 }
