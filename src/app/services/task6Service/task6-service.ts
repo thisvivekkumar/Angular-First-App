@@ -10,4 +10,9 @@ export class Task6Service {
         return this.http.get('https://jsonplaceholder.typicode.com/users')
     }
 
+    postReview(review: any): Observable<any> {
+  // JSONPlaceholder allows you to simulate a POST request
+  return this.http.post('https://jsonplaceholder.typicode.com/posts', review);
+}
+
 }

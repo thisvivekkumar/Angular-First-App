@@ -29,8 +29,8 @@ export class DsComponent {
 
   onInputNumber(): boolean {
     this.isNumberPalindrome =false
-    let givenNumber: number = Number(this.inputNumber);
-    let originnumber: number = Number(this.inputNumber);
+    let givenNumber: number = this.inputNumber
+    let originnumber: number = this.inputNumber;
     let reversex: number = 0;
     let lastdigit: number = 0;
 

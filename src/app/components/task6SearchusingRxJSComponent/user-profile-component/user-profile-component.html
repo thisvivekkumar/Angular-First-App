@@ -3,3 +3,23 @@
       <h1>User Profile</h1>
       <p>Viewing details for User ID: {{ userId }}</p>
 </div>
+
+<form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" style="margin-top: 20px;">
+  <h3>Leave a Review</h3>
+  
+  <div>
+    <label>Rating (1-5):</label>
+    <input type="number" formControlName="rating">
+  </div>
+
+  <div>
+    <label>Comment:</label>
+    <textarea formControlName="comment" placeholder="Must be at least 10 chars"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="reviewForm.invalid">Submit Review</button>
+
+  @if (reviewForm.get('comment')?.invalid && reviewForm.get('comment')?.touched) {
+    <p style="color: red;">Please write at least 10 characters.</p>
+  }
+</form>
